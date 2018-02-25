@@ -1,24 +1,57 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 開発環境
+* Ruby 2.3.1
 
-Things you may want to cover:
+# DB設計
 
-* Ruby version
+## usersテーブル
 
-* System dependencies
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+* nameカラムにindexを貼る
 
-* Configuration
+### アソシエーション（usersテーブル）
+- has_many :groups, through: :members
+- has_many :members
+- has_many :messages
 
-* Database creation
+## groupsテーブル
 
-* Database initialization
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
 
-* How to run the test suite
+### アソシエーション（groupsテーブル）
+- has_many :users, through: :members
+- has_many :members
+- has_many :messages
 
-* Services (job queues, cache servers, search engines, etc.)
+## membersテーブル(usersテーブルとgroupsテーブルの中間テーブル)
 
-* Deployment instructions
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-* ...
+### アソシエーション（membersテーブル）
+- belongs_to :group
+- belongs_to :user
+
+## messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|image|string||
+|content|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### アソシエーション（messagesテーブル）
+- belongs_to :group
+- belongs_to :user
+
+
