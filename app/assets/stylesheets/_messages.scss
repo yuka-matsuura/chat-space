@@ -22,12 +22,12 @@ html{
           height: 100px;
           padding: 0 20px;
           color: #FFFFFF;
-          .user-information__user-name{
+          &__user-name{
             font-weight: bold;
             font-size: 16px;
             display: inline-block;
           }
-          .user-information__icon-lists{
+          &__icon-lists{
             float: right;
           }
         }
@@ -37,10 +37,10 @@ html{
           color: #FFFFFF;
           .group{
             padding: 20px 0 40px;
-            .group__name{
+            &__name{
               font-size: 15px;
             }
-            .group__message{
+            &__message{
               font-size: 11px;
               margin-top: 5px;
             }
@@ -57,12 +57,12 @@ html{
           border-bottom: 1px solid #eeeeee;
           .left-header{
             float: left;
-            .left-header__group-name{
+            &__group-name{
               font-size: 20px;
               color: #333333;
               margin-top: 35px;
             }
-            .left-header__group-members{
+            &__group-members{
               font-size: 12px;
               color: #999999;
               margin-top: 15px;
@@ -95,12 +95,12 @@ html{
             margin-bottom: 40px;
             .upper-message{
               display: flex;
-              .upper-message__user-name{
+              &__user-name{
                 font-size: 16px;
                 font-weight: bold;
                 color: #434A54;
               }
-              .upper-message__create-date{
+              &__create-date{
                 font-size: 12px;
                 color: #999999;
               }
@@ -133,7 +133,7 @@ html{
             float: left;
             padding-right: 10px;
             height: 50px;
-            .image-form__message-image{
+            &__message-image{
               line-height: 50px;
               font-size: 20px;
             }
