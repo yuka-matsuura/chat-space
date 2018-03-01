@@ -1,18 +1,24 @@
+$white: #FFFFFF;
+$light-gray: #999999;
+$light-blue: #38AEF0;
+$dark-blue: #2f3e51;
+$dark-gray: #434A54;
+
 html{
   height: 100%;
   body{
     height: 100%;
     .notification
       .notice{
-        background-color: #38AEF0;
-        color: #FFFFFF;
+        background-color: $light-blue;
+        color: $white;
         text-align: center;
       }
     .wrapper{
       height: 100%;
-      background-color: #FFFFFF;
+      background-color: $white;
       .side-bar{
-        background-color: #2f3e51;
+        background-color: $dark-blue;
         width: 300px;
         height: 100%;
         float: left;
@@ -21,7 +27,7 @@ html{
           line-height: 100px;
           height: 100px;
           padding: 0 20px;
-          color: #FFFFFF;
+          color: $white;
           &__user-name{
             font-weight: bold;
             font-size: 16px;
@@ -32,9 +38,9 @@ html{
           }
         }
         .groups{
-          background-color: #2f3e51;
+          background-color: $dark-blue;
           padding: 0 20px;
-          color: #FFFFFF;
+          color: $white;
           .group{
             padding: 20px 0 40px;
             &__name{
@@ -64,10 +70,10 @@ html{
             }
             &__group-members{
               font-size: 12px;
-              color: #999999;
+              color: $light-gray;
               margin-top: 15px;
               .group-member{
-                color: #999999;
+                color: $light-gray;
                 font-size: 12px;
                 list-style: none;
                 display: inline-block;
@@ -75,13 +81,13 @@ html{
             }
           }
           .right-header{
-            border: 1px solid #38AEF0;
+            border: 1px solid $light-blue;
             padding: 0 20px;
             float: right;
             height: 40px;
             margin-top: 28px;
             line-height: 40px;
-            color: #38AEF0;
+            color: $light-blue;
           }
         }
         .messages{
@@ -98,16 +104,16 @@ html{
               &__user-name{
                 font-size: 16px;
                 font-weight: bold;
-                color: #434A54;
+                color: $dark-gray;
               }
               &__create-date{
                 font-size: 12px;
-                color: #999999;
+                color: $light-gray;
               }
             }
             .lower-message{
               font-size: 14px;
-              color: #434A54;
+              color: $dark-gray;
               margin-top: 10px;
             }
           }
@@ -122,14 +128,14 @@ html{
             padding: 0 10px;
             line-height: 50px;
             font-size: 16px;
-            color: #434A54;
+            color: $dark-gray;
             float: left;
             width: calc(100% - 150px);
             border: none;
             box-sizing: border-box;
           }
           .image-form{
-            background-color: #FFFFFF;
+            background-color: $white;
             float: left;
             padding-right: 10px;
             height: 50px;
@@ -139,8 +145,8 @@ html{
             }
           }
           .form-submit{
-            background-color: #38AEF0;
-            color: #FFFFFF;
+            background-color: $light-blue;
+            color: $white;
             padding: 0 30px;
             height: 50px;
             font-size: 16px;
