@@ -2,12 +2,20 @@ html{
   height: 100%;
   body{
     height: 100%;
+    .notification
+      .notice{
+        background-color: #38AEF0;
+        color: #FFFFFF;
+        text-align: center;
+      }
     .wrapper{
       height: 100%;
+      background-color: #FFFFFF;
       .side-bar{
         background-color: #2f3e51;
         width: 300px;
         height: 100%;
+        float: left;
         .user-information{
           background-color: #253141;
           line-height: 100px;
@@ -39,6 +47,109 @@ html{
           }
         }
       }
+      .chat{
+        width: calc(100% - 300px);
+        float: right;
+        height: 100%;
+        .header{
+          height: 100px;
+          padding: 0 40px;
+          border-bottom: 1px solid #eeeeee;
+          .left-header{
+            float: left;
+            .left-header__group-name{
+              font-size: 20px;
+              color: #333333;
+              margin-top: 35px;
+            }
+            .left-header__group-members{
+              font-size: 12px;
+              color: #999999;
+              margin-top: 15px;
+              .group-member{
+                color: #999999;
+                font-size: 12px;
+                list-style: none;
+                display: inline-block;
+              }
+            }
+          }
+          .right-header{
+            border: 1px solid #38AEF0;
+            padding: 0 20px;
+            float: right;
+            height: 40px;
+            margin-top: 28px;
+            line-height: 40px;
+            color: #38AEF0;
+          }
+        }
+        .messages{
+          // 指示書通りにやったら色が濃いので変更
+          background-color: #FAFAFA;
+          height: calc(100% - 190px);
+          padding:46px 40px 0;
+          overflow: scroll;
+          box-sizing: border-box;
+          .message{
+            margin-bottom: 40px;
+            .upper-message{
+              display: flex;
+              .upper-message__user-name{
+                font-size: 16px;
+                font-weight: bold;
+                color: #434A54;
+              }
+              .upper-message__create-date{
+                font-size: 12px;
+                color: #999999;
+              }
+            }
+            .lower-message{
+              font-size: 14px;
+              color: #434A54;
+              margin-top: 10px;
+            }
+          }
+        }
+        .message-form{
+          background-color: #DDDDDD;
+          height: 90px;
+          padding: 20px 40px;
+          box-sizing: border-box;
+          .message-text{
+            height: 50px;
+            padding: 0 10px;
+            line-height: 50px;
+            font-size: 16px;
+            color: #434A54;
+            float: left;
+            width: calc(100% - 150px);
+            border: none;
+            box-sizing: border-box;
+          }
+          .image-form{
+            background-color: #FFFFFF;
+            float: left;
+            padding-right: 10px;
+            height: 50px;
+            .image-form__message-image{
+              line-height: 50px;
+              font-size: 20px;
+            }
+          }
+          .form-submit{
+            background-color: #38AEF0;
+            color: #FFFFFF;
+            padding: 0 30px;
+            height: 50px;
+            font-size: 16px;
+            float: right;
+            border: none;
+          }
+        }
+      }
     }
   }
 }
+
