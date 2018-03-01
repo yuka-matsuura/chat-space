@@ -14,8 +14,8 @@
     .messages
       =render partial: "messages/message"
     %form.message-form
-      %input.message-text{ :placeholder => "type a message" }
+      %input.message-text{ placeholder: "type a message" }
       .image-form
         .image-form__message-image
           %i.fa.fa-picture-o.icon
-      %input.form-submit{ :type => "submit", :value => "Send" }
+      %input.form-submit{ type: "submit", value: "Send" }
