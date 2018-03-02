@@ -1,0 +1,156 @@
+html{
+  height: 100%;
+  body{
+    height: 100%;
+    .notification
+      .notice{
+        background-color: $light-blue;
+        color: $white;
+        text-align: center;
+      }
+    .wrapper{
+      height: 100%;
+      background-color: $white;
+      .side-bar{
+        background-color: $dark-blue;
+        width: 300px;
+        height: 100%;
+        float: left;
+        .user-information{
+          background-color: #253141;
+          line-height: 100px;
+          height: 100px;
+          padding: 0 20px;
+          color: $white;
+          &__user-name{
+            font-weight: bold;
+            font-size: 16px;
+            display: inline-block;
+          }
+          &__icon-lists{
+            float: right;
+          }
+        }
+        .groups{
+          background-color: $dark-blue;
+          padding: 0 20px;
+          color: $white;
+          .group{
+            padding: 20px 0 40px;
+            &__name{
+              font-size: 15px;
+            }
+            &__message{
+              font-size: 11px;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+      .chat{
+        width: calc(100% - 300px);
+        float: right;
+        height: 100%;
+        .header{
+          height: 100px;
+          padding: 0 40px;
+          border-bottom: 1px solid #eeeeee;
+          .left-header{
+            float: left;
+            &__group-name{
+              font-size: 20px;
+              color: #333333;
+              margin-top: 35px;
+            }
+            &__group-members{
+              font-size: 12px;
+              color: $light-gray;
+              margin-top: 15px;
+              .group-member{
+                color: $light-gray;
+                font-size: 12px;
+                list-style: none;
+                display: inline-block;
+              }
+            }
+          }
+          .right-header{
+            border: 1px solid $light-blue;
+            padding: 0 20px;
+            float: right;
+            height: 40px;
+            margin-top: 28px;
+            line-height: 40px;
+            color: $light-blue;
+          }
+        }
+        .messages{
+          // 指示書通りにやったら色が濃いので変更
+          background-color: #FAFAFA;
+          height: calc(100% - 190px);
+          padding:46px 40px 0;
+          overflow: scroll;
+          box-sizing: border-box;
+          .message{
+            margin-bottom: 40px;
+            .upper-message{
+              display: flex;
+              &__user-name{
+                font-size: 16px;
+                font-weight: bold;
+                color: $dark-gray;
+              }
+              &__create-date{
+                font-size: 12px;
+                color: $light-gray;
+                padding-left: 10px;
+              }
+            }
+            .lower-message{
+              font-size: 14px;
+              color: $dark-gray;
+              margin-top: 10px;
+            }
+          }
+        }
+        .message-form{
+          background-color: #DDDDDD;
+          height: 90px;
+          padding: 20px 40px;
+          box-sizing: border-box;
+          .message-text{
+            height: 50px;
+            padding: 0 10px;
+            line-height: 50px;
+            font-size: 16px;
+            color: $dark-gray;
+            float: left;
+            width: calc(100% - 150px);
+            border: none;
+            box-sizing: border-box;
+          }
+          .image-form{
+            background-color: $white;
+            float: left;
+            padding-right: 10px;
+            height: 50px;
+            &__message-image{
+              line-height: 50px;
+              font-size: 20px;
+            }
+          }
+          .form-submit{
+            background-color: $light-blue;
+            color: $white;
+            padding: 0 30px;
+            height: 50px;
+            font-size: 16px;
+            float: right;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,21 @@
+= render partial: "messages/notification"
+.wrapper
+  = render partial: "messages/side-bar"
+  .chat
+    .header
+      .left-header
+        .left-header__group-name group1
+        .left-header__group-members
+          .group-member Member :
+          .group-member user-name
+          .group-member user-name2
+      .right-header
+        .right-header__edit-button Edit
+    .messages
+      =render partial: "messages/message"
+    %form.message-form
+      %input.message-text{ placeholder: "type a message" }
+      .image-form
+        .image-form__message-image
+          %i.fa.fa-picture-o.icon
+      %input.form-submit{ type: "submit", value: "Send" }
