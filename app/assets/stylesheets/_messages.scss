@@ -2,12 +2,6 @@ html{
   height: 100%;
   body{
     height: 100%;
-    .notification
-      .notice{
-        background-color: $light-blue;
-        color: $white;
-        text-align: center;
-      }
     .wrapper{
       height: 100%;
       background-color: $white;
@@ -17,7 +11,7 @@ html{
         height: 100%;
         float: left;
         .user-information{
-          background-color: #253141;
+          background-color: $deep-blue;
           line-height: 100px;
           height: 100px;
           padding: 0 20px;
@@ -29,6 +23,9 @@ html{
           }
           &__icon-lists{
             float: right;
+            .icon-list{
+              display: inline-block;
+            }
           }
         }
         .groups{
