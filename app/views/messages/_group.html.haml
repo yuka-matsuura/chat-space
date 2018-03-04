@@ -1,6 +1,7 @@
 .group
-  .group__name group1
-  .group__message testです
-.group
-  .group__name group2
-  .group__message testです...
+  - current_user.groups.each do |group|
+    = link_to root_path(group) do
+      .group__name
+        = group.name
+      .group__message
+        メッセージはまだありません。
