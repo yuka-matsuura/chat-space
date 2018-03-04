@@ -1,5 +1,5 @@
-.group
-  - current_user.groups.each do |group|
+- current_user.groups.each do |group|
+  .group
     = link_to root_path(group) do
       .group__name
         = group.name

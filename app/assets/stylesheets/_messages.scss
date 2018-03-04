@@ -31,15 +31,16 @@ html{
         .groups{
           background-color: $dark-blue;
           padding: 0 20px;
-          color: $white;
           .group{
             padding: 20px 0 40px;
             &__name{
               font-size: 15px;
+              color: $white;
             }
             &__message{
               font-size: 11px;
               margin-top: 5px;
+              color: $white;
             }
           }
         }
