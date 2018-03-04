@@ -5,4 +5,7 @@ class MessagesController < ApplicationController
      # グループに紐づくメッセージを取得する処理
   end
 
+  def create
+  end
+
 end
