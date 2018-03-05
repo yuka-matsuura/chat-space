@@ -25,6 +25,9 @@ html{
             float: right;
             .icon-list{
               display: inline-block;
+                i{
+                  color: $white;
+                }
             }
           }
         }
@@ -79,7 +82,10 @@ html{
             height: 40px;
             margin-top: 28px;
             line-height: 40px;
-            color: $light-blue;
+            a{
+              color: $light-blue;
+              text-decoration: none;
+            }
           }
         }
         .messages{
@@ -135,6 +141,9 @@ html{
             &__message-image{
               line-height: 50px;
               font-size: 20px;
+            }
+            .hidden{
+              display: none;
             }
           }
           .form-submit{

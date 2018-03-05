@@ -3,18 +3,23 @@
   .chat
     .header
       .left-header
-        .left-header__group-name group1
+        .left-header__group-name
+          = @group.name
         .left-header__group-members
-          .group-member Member :
-          .group-member user-name
-          .group-member user-name2
+          Member:
+          - @group.users.each do |user|
+            .group-member
+            = user.name
       .right-header
-        .right-header__edit-button Edit
+        = link_to edit_group_path(@group) do
+          Edit
     .messages
-      =render partial: "messages/message"
-    %form.message-form
-      %input.message-text{ placeholder: "type a message" }
-      .image-form
-        .image-form__message-image
-          %i.fa.fa-picture-o.icon
-      %input.form-submit{ type: "submit", value: "Send" }
+      = render @messages
+    .message-form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'message-text', placeholder: "type a message"
+        .image-form
+          = f.label :image, class: 'image-form__message-image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form-submit'
