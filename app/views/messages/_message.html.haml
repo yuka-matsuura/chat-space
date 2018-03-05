@@ -1,12 +1,11 @@
 .message
   .upper-message
-    .upper-message__user-name user-name
-    .upper-message__create-date 2018/02/28 12:34:45
+    .upper-message__user-name
+      = message.user.name
+    .upper-message__create-date
+      = message.created_at.in_time_zone('Tokyo').to_s(:datetime)
   .lower-message
-    .lower-message__content sample message
-.message
-  .upper-message
-    .upper-message__user-name user-name
-    .upper-message__create-date 2018/03/01 11:30:12
-  .lower-message
-    .lower-message__content testです
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
