@@ -60,5 +60,8 @@ gem 'rails-i18n'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-rails'
-
+gem 'rspec-rails', '~> 3.5'
+gem 'rails-controller-testing'
+gem 'factory_girl_rails', '~> 4.0'
+gem 'faker'
 
