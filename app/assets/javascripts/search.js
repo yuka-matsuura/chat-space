@@ -1,6 +1,7 @@
 $(function(){
 
   var searchList = $("#user-search-result");
+  var groupMember = $("#chat-group-users");
 
   function appendUser(user) {
     var html = `<div class="chat-group-user clearfix">
@@ -21,13 +22,12 @@ $(function(){
                   <p class="chat-group-user__name">${name}</p>
                   <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn">削除</a>
                 </div>`
-    $('#chat-group-users').append(html);
+    groupMember.append(html);
   }
 
   // インクリメンタルサーチ
   $('#user-search-field').on('keyup', function() {
     var input = $(this).val();
-
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -53,14 +53,14 @@ $(function(){
   });
 
   // インクリメンタルサーチ後の処理
-  $(document).on('click', '.chat-group-user__btn--add', function(){
+  searchList.on('click', '.chat-group-user__btn--add', function(){
     var id = $(this).attr('data-user-id');
     var name = $(this).attr('data-user-name');
     addUser(id,name);
     $(this).parent().remove();
   });
 
-  $(document).on('click', '.js-remove-btn', function(){
+  $(".chat-group-form__field--right").on('click', '.js-remove-btn', function(){
     $(this).parent().remove();
   });
 
