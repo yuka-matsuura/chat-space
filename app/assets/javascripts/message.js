@@ -14,6 +14,42 @@ $(function(){
     return html;
   }
 
+  // メッセージ自動更新機能(非同期)
+  var interval = setInterval(function() {
+    // 現在のアクション（messageのindexアクション）からデータを取得
+    var url = location.href;
+    var lastMessageId = $('.message').last().data('messageId');
+    // 閲覧ページがメッセージ一覧画面がどうか確認
+    if(url.match(/\/groups\/[\d]{1,}\/messages/)){
+      $.ajax({
+      url: url,
+      type: "GET",
+      data: {id: lastMessageId},
+      dataType: 'json',
+      processData: false,
+      contentType: false
+      })
+      .done(function(data){
+        // 成功した時の処理
+        // 2回目以降の自動更新のために変数insertHtmlを空にする
+        var insertHtml = '';
+        data.forEach(function(message){
+          var html = buildHTML(message);
+          $('.messages').append(html);
+        })
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+      })
+      .fail(function(data){
+        // 失敗した時の処理
+        alert('error');
+      })
+    } else {
+      // 閲覧ページがメッセージ一覧画面ではない場合
+      clearInterval(interval);
+    }
+  }, 5000);
+
+
   // メッセージ投稿機能の非同期化
   $('#new_message').on('submit', function(e){
     e.preventDefault();
@@ -45,4 +81,4 @@ $(function(){
       $('.form-submit').prop('disabled', false);
     })
   })
-})
+});
